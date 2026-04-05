@@ -110,6 +110,20 @@ const Hero = () => {
     
     gsap.ticker.add(renderLoop);
 
+    // 3. Scroll Parallax for Nodes
+    nodes.forEach((node, i) => {
+        gsap.to(node, {
+            y: "-=200", // Move up on scroll
+            ease: "none",
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    });
+
     return () => {
       splitText.revert();
       window.removeEventListener('mousemove', onMouseMove);

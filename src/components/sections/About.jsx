@@ -1,20 +1,59 @@
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+  const countRef = useRef(null);
+  const imgRef1 = useRef(null);
+  const imgRef2 = useRef(null);
+
+  useEffect(() => {
+    // 1. Count-up Animation for 99%
+    const countTarget = { val: 0 };
+    gsap.to(countTarget, {
+      val: 99,
+      duration: 2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: countRef.current,
+        start: "top 85%",
+      },
+      onUpdate: () => {
+        if (countRef.current) {
+          countRef.current.innerHTML = Math.round(countTarget.val) + "%";
+        }
+      }
+    });
+
+    // 2. Cinematic Image Mask Reveal
+    [imgRef1.current, imgRef2.current].forEach((img, i) => {
+        gsap.fromTo(img, 
+            { clipPath: "inset(100% 0% 0% 0%)" },
+            { 
+               clipPath: "inset(0% 0% 0% 0%)", 
+               duration: 1.5, 
+               ease: "expo.out",
+               delay: i * 0.2,
+               scrollTrigger: {
+                 trigger: img,
+                 start: "top 80%",
+               }
+            }
+        );
+    });
+  }, []);
+
   return (
     <section id="about" className="relative py-32 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         
         {/* Image Grid Side */}
         <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4 relative">
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-4 pt-12"
-          >
-            <div className="relative rounded-2xl overflow-hidden glassmorphism aspect-[4/5]">
+          <div className="space-y-4 pt-12">
+            <div ref={imgRef1} className="relative rounded-2xl overflow-hidden glassmorphism aspect-[4/5]">
               <img 
                 src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600" 
                 alt="Cyber Studio" 
@@ -22,16 +61,10 @@ const About = () => {
               />
               <div className="absolute inset-0 bg-accent/20 mix-blend-overlay"></div>
             </div>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="space-y-4"
-          >
-            <div className="relative rounded-2xl overflow-hidden glassmorphism aspect-[4/5]">
+          <div className="space-y-4">
+            <div ref={imgRef2} className="relative rounded-2xl overflow-hidden glassmorphism aspect-[4/5]">
               <img 
                 src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600" 
                 alt="Code Matrix" 
@@ -41,23 +74,17 @@ const About = () => {
             </div>
             
             <div className="glass-card p-6 flex flex-col items-center justify-center text-center">
-              <span className="text-4xl font-bold font-heading text-white">99%</span>
+              <span ref={countRef} className="text-4xl font-bold font-heading text-white">0%</span>
               <span className="text-sm text-gray-400 mt-2">AI Accuracy</span>
             </div>
-          </motion.div>
+          </div>
 
           {/* Decorative Blur */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/30 rounded-full blur-[100px] -z-10"></div>
         </div>
 
         {/* Text Content */}
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="w-full lg:w-1/2"
-        >
+        <div className="w-full lg:w-1/2">
           <div className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6">
             <span className="text-sm font-medium tracking-wide text-accent uppercase">
               About Our Engine
@@ -107,7 +134,7 @@ const About = () => {
           >
             Discover the Core
           </motion.a>
-        </motion.div>
+        </div>
 
       </div>
     </section>

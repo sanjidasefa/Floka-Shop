@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 import { FiCpu, FiGlobe, FiZap } from 'react-icons/fi';
 import { FaInfinity } from 'react-icons/fa';
 import gsap from 'gsap';
@@ -31,24 +30,12 @@ const servicesList = [
   }
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] } }
-};
-
 const Services = () => {
   const titleRef = useRef(null);
+  const cardsRef = useRef([]);
 
   useEffect(() => {
-    // GSAP Blur-to-clear entrance
+    // 1. GSAP Blur-to-clear entrance for title
     const splitText = new SplitType(titleRef.current, { types: 'words' });
     
     gsap.fromTo(splitText.words, 
@@ -65,6 +52,30 @@ const Services = () => {
           start: 'top 80%',
         }
       }
+    );
+
+    // 2. Cinematic Card Staggered Entrance
+    gsap.fromTo(cardsRef.current, 
+        { 
+            opacity: 0, 
+            y: 100, 
+            rotateX: -15,
+            scale: 0.9,
+            transformOrigin: "center top"
+        },
+        {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            scale: 1,
+            stagger: 0.2,
+            duration: 1.5,
+            ease: "expo.out",
+            scrollTrigger: {
+                trigger: cardsRef.current[0],
+                start: "top 85%",
+            }
+        }
     );
 
     return () => splitText.revert();
@@ -87,18 +98,12 @@ const Services = () => {
           </h2>
         </div>
 
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 perspective-[1000px]">
           {servicesList.map((srv, i) => (
-            <motion.div 
+            <div 
               key={i}
-              variants={itemVariants}
-              className="group relative glass-card p-10 overflow-hidden"
+              ref={el => cardsRef.current[i] = el}
+              className="group relative glass-card p-10 overflow-hidden will-change-transform"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out origin-left"></div>
               
@@ -123,9 +128,9 @@ const Services = () => {
 
               {/* Background Glow Effect on Hover */}
               <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent rounded-full blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none"></div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

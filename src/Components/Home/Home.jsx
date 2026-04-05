@@ -1,12 +1,16 @@
 import React from 'react';
-import Hero from './HomeComponent/Hero';
 import ContactUs from './HomeComponent/ContactUs';
+import AboutUs from './HomeComponent/AboutUs';
+import Hero from './HomeComponent/HEro';
 
 const Home = () => {
   return (
     <>
+    <div className='min-h-screen '>
       <Hero></Hero>
+        <AboutUs></AboutUs>
       <ContactUs></ContactUs>
+    </div>
     </>
   );
 };

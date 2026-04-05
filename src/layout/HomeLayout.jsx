@@ -10,9 +10,9 @@ const HomeLayout = () => {
     <div className='relative'>
       <CustomCursor></CustomCursor>
       <Header></Header>
-    <div className='min-h-screen'>
+    <main className='min-h-screen mt-10 bg-gray-200'>
         <Outlet/>
-    </div>
+    </main>
       <Footer></Footer>
     </div>
     </>

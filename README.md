@@ -1,18 +1,40 @@
-# React + Vite
+# 🚀 Premium Animated React Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance, Awwwards-level single-page website built with **React (Vite)**, featuring advanced animations, smooth interactions, and a premium dark glassmorphism UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Live Demo
 
-## React Compiler
+👉 Live Website: [Click Here](#)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## 📸 Preview
 
-## Expanding the ESLint configuration
+(Add screenshot or GIF here)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 🎨 Modern Dark Glassmorphism UI
+- ⚡ Smooth animations (GSAP + Framer Motion)
+- 🧠 Advanced text animations (split, stagger, reveal)
+- 🚀 Physics-based hero animations (antigravity effect)
+- 🎬 GSAP Preloader animation
+- 🌀 Smooth scrolling (Lenis)
+- 🎯 Scroll-triggered animations
+- 💡 Hover micro-interactions
+- 📱 Fully responsive design
+- 🔥 Awwwards-level UI/UX experience
+
+---
+
+## 🛠️ Tech Stack
+
+- React (Vite)
+- Tailwind CSS
+- GSAP (ScrollTrigger, animations)
+- Framer Motion
+- Lenis (smooth scrolling)

@@ -100,7 +100,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="services" className="border-b-2 relative py-24 md:py-32 overflow-hidden">
+    <section ref={sectionRef} id="services" className="border-b-2 relative py-4 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 -z-10 pointer-events-none"  
       />
@@ -109,7 +109,7 @@ const Services = () => {
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-20 max-w-3xl mx-auto">
+        <div className="text-center mb-10 md:mb-20 max-w-3xl mx-auto">
           <motion.div className="section-tag justify-center mx-auto mb-6 w-fit"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -118,7 +118,7 @@ const Services = () => {
             <span className="section-tag-dot" />
             <span>Our Capabilities</span>
           </motion.div>
-          <h2 ref={titleRef} className="text-4xl md:text-5xl font-black font-heading tracking-tight leading-[1.15] text-white mb-6">
+          <h2 ref={titleRef} className="text-3xl md:text-5xl font-black font-heading tracking-tight leading-[1.15] text-white mb-6">
             Digital experiences <br /> built for a better world.
           </h2>
           <motion.p

@@ -46,7 +46,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer ref={footerRef} className="relative pt-24 pb-10 overflow-hidden border-t border-white/5 "
+    <footer ref={footerRef} className="relative pt-15 pb-10 overflow-hidden border-t border-white/5 "
       
     >
       {/* Floating orbs */}

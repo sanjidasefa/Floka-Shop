@@ -54,7 +54,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="portfolio" className="relative py-24 md:py-32 overflow-hidden ">
+    <section ref={sectionRef} id="portfolio" className="relative py-15 md:py-32 overflow-hidden ">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none -z-10">
         <div className="absolute inset-0 grid-overlay opacity-20" />
@@ -72,7 +72,7 @@ const Portfolio = () => {
               <span className="section-tag-dot" />
               <span>Selected Works</span>
             </motion.div>
-            <h2 ref={titleRef} className="text-4xl md:text-5xl font-black font-heading tracking-tight leading-[1.15] text-white mb-6">
+            <h2 ref={titleRef} className="text-3xl md:text-5xl font-black font-heading tracking-tight leading-[1.15] text-white mb-6">
               Stories of Change.
             </h2>
             <motion.p

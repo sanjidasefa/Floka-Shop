@@ -71,7 +71,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section ref={sectionRef} id="testimonials" className="relative py-24 md:py-32 overflow-hidden border-t-2 "
+    <section ref={sectionRef} id="testimonials" className="relative py-15 md:py-32 overflow-hidden border-t-2 "
     >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none -z-10">
@@ -91,7 +91,7 @@ const Testimonials = () => {
               <span>Voices of Change</span>
             </motion.div>
 
-            <h2 ref={titleRef} className="text-4xl md:text-5xl font-black font-heading leading-[1.15] tracking-tight text-white mb-8">
+            <h2 ref={titleRef} className="text-3xl md:text-5xl font-black font-heading leading-[1.15] tracking-tight text-white mb-6">
               What our <br /> partners say.
             </h2>
 
@@ -178,7 +178,7 @@ const Testimonials = () => {
                   {testimonials[active].quote}
                 </p>
 
-                <div className="flex items-center gap-5 border-t border-white/5 pt-8">
+                <div className="flex items-center gap-5 border-t border-white/5 md:pt-8">
                   <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${testimonials[active].color} p-px shadow-2xl`}>
                     <div className="w-full h-full rounded-full bg-[#060612] flex items-center justify-center font-black text-xl text-white">
                       {testimonials[active].avatar}

@@ -49,7 +49,7 @@ const CTA = () => {
       id="contact"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative py-32 md:py-44 overflow-hidden "
+      className="relative py-25 md:py-44 overflow-hidden "
     >
       {/* Animated concentric rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
@@ -87,7 +87,7 @@ const CTA = () => {
         {/* Heading with mouse parallax */}
         <motion.h2
           style={{ x: headX, y: headY }}
-          className="text-5xl md:text-6xl lg:text-7xl font-black font-heading tracking-tighter leading-[1.05] text-white mb-10 cursor-crosshair"
+          className="text-3xl md:text-5xl lg:text-7xl font-black font-heading tracking-tighter leading-[1.05] text-white mb-6 cursor-crosshair"
         >
           Ready to build <br />
           <span className="text-gradient-flow">something that matters?</span>

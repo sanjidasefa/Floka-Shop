@@ -73,12 +73,12 @@ const About = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="relative py-24 md:py-32 overflow-hidden ">
+    <section ref={sectionRef} id="about" className="relative py-15 md:py-32 overflow-hidden ">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none -z-10">
         <div className="absolute top-0 right-0 w-[40%] h-[60%] orb orb-accent opacity-10" />
         <div className="absolute bottom-0 left-0 w-[35%] h-[50%] orb orb-alt opacity-8"/>
-        <div className="absolute inset-0 grid-overlay opacity-20" />
+        <div className="absolute inset-0 grid-overlay opacity-30" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
@@ -176,7 +176,7 @@ const About = () => {
             {/* Heading with char stagger */}
             <h2
               ref={headingRef}
-              className="text-4xl md:text-5xl font-black font-heading mb-6 tracking-tight leading-[1.15] text-white mt-4"
+              className="text-3xl md:text-5xl font-black font-heading mb-6 tracking-tight leading-[1.15] text-white mt-4"
             >
               Building profound<br />
               <span className="text-gradient-flow">digital connections.</span>
@@ -195,7 +195,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="text-base md:text-lg text-gray-400 leading-relaxed mb-10 max-w-lg"
+              className="text-base md:text-lg text-gray-400 leading-relaxed mb-6 md:10 max-w-lg"
             >
               We believe technology should serve humanity. Our approach fuses the organic
               beauty of the natural world with the precision of modern engineering to create

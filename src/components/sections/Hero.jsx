@@ -150,7 +150,7 @@ const Hero = () => {
         {/* Heading: Fluid typography for all devices */}
         <h1 
           ref={titleRef}
-          className="text-4xl sm:text-6xl md:text-8xl lg:text-[100px] font-bold tracking-tighter leading-[1.1] mb-6 text-white"
+          className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter leading-[1.1] mb-6 text-white"
         >
           Nature's Blueprint <br className="hidden sm:block" /> 
           For Digital Experiences.

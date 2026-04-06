@@ -133,11 +133,11 @@ const Navbar = () => {
             animate={{ opacity: 1, clipPath: 'circle(150% at calc(100% - 44px) 44px)' }}
             exit={{ opacity: 0, clipPath: 'circle(0% at calc(100% - 44px) 44px)' }}
             transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-0 z-40 lg:hidden flex flex-col pt-28 pb-10 px-8"
+            className="fixed inset-0 z-40 lg:hidden flex flex-col pt-2 pb-70 px-8"
             style={{  backdropFilter: 'blur(30px)' }}
           >
             {/* Background orbs in menu */}
-            <div className="absolute top-20 right-10 w-48 h-48 orb orb-accent opacity-15 pointer-events-none" />
+            <div className="absolute top-10 right-10 w-48 h-48 orb orb-accent opacity-15 pointer-events-none" />
             <div className="absolute bottom-20 left-10 w-36 h-36 orb orb-alt opacity-10 pointer-events-none" />
 
             <nav className="flex flex-col gap-2 flex-1 justify-center">
@@ -154,7 +154,7 @@ const Navbar = () => {
                     onClick={() => setMenuOpen(false)}
                     className="group flex items-center justify-between py-4 border-b border-white/5 hover:border-accent/20 transition-colors duration-300"
                   >
-                    <span className="text-4xl font-black font-heading text-white group-hover:text-accent transition-colors duration-300">
+                    <span className="text-2xl font-black font-heading text-white group-hover:text-accent transition-colors duration-300">
                       {link.name}
                     </span>
                     <FiArrowRight size={20} className="text-gray-600 group-hover:text-accent group-hover:translate-x-1 transition-all duration-300" />

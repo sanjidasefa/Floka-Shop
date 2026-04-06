@@ -36,7 +36,7 @@ const Navbar = () => {
         transition={{ duration: 0.9, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled || menuOpen
-            ? 'py-3 bg-[#030307]/90 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
+            ? 'py-3 bg-[#030307]/40 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.5)]'
             : 'py-5 bg-transparent'
         }`}
       >
@@ -134,7 +134,7 @@ const Navbar = () => {
             exit={{ opacity: 0, clipPath: 'circle(0% at calc(100% - 44px) 44px)' }}
             transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
             className="fixed inset-0 z-40 lg:hidden flex flex-col pt-28 pb-10 px-8"
-            style={{ background: 'rgba(3,3,7,0.97)', backdropFilter: 'blur(30px)' }}
+            style={{  backdropFilter: 'blur(30px)' }}
           >
             {/* Background orbs in menu */}
             <div className="absolute top-20 right-10 w-48 h-48 orb orb-accent opacity-15 pointer-events-none" />

@@ -40,7 +40,7 @@ const Hero = () => {
       stagger: 0.15,
       duration: 1.4,
       ease: 'power4.out',
-      delay: 2.2 // wait for preloader
+      delay: 2.2
     });
 
     // 2. Anti-Gravity Engine using GSAP quickSetter
@@ -162,16 +162,16 @@ const Hero = () => {
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 text-center max-w-5xl px-6">
+      <div className="relative z-10 text-center max-w-5xl px-6 ">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 2.5 }}
-          className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6"
+          className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 md:mt-15"
         >
           <span className="text-sm font-medium tracking-wide text-gray-300 uppercase">
             <span className="inline-block w-2 h-2 rounded-full bg-accent mr-2 animate-pulse"></span>
-            Agentic Interface Model
+           Building the Digital Future
           </span>
         </motion.div>
 
@@ -179,7 +179,8 @@ const Hero = () => {
           ref={titleRef}
           className="text-6xl md:text-8xl lg:text-[100px] font-heading font-bold tracking-tighter leading-[1.1] mb-8 text-gradient-flow drop-shadow-[0_0_20px_rgba(108,99,255,0.4)]"
         >
-          Intelligence <br /> Without Gravity.
+         Nature's Blueprint
+ <br /> For Digital Experiences.
         </h1>
 
         <motion.p 
@@ -188,10 +189,27 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 3 }}
           className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10"
         >
-          Elevate your digital presence with zero-friction AI agents. 
-          Experience autonomous interactions rendered at a perfect 60 frames per second.
+          We architect digital ecosystems that mirror the organic intelligence of nature — fusing human-centered innovation with breathtaking technical precision.
         </motion.p>
+  <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 4.5, duration: 1 }}
+          className="mt-14 mb-4 flex flex-wrap items-center justify-center gap-8 md:gap-16"
+        >
+          {[
+            { value: '250+', label: 'Communities' },
+            { value: '5M+', label: 'Global Users' },
+            { value: '98%', label: 'Satisfaction' },
+          ].map((s, i) => (
+            <div key={i} className="flex flex-col items-center gap-1">
+              <span className="text-2xl md:text-3xl font-black font-heading text-gradient-static">{s.value}</span>
+              <span className="text-[10px] uppercase tracking-[0.25em] text-gray-600">{s.label}</span>
+            </div>
+          ))}
+        </motion.div>
       </div>
+
 
       {/* Scroll indicator */}
       <motion.div 

@@ -116,7 +116,7 @@ const CTA = () => {
             href="mailto:hello@flokashop.com"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="btn-primary group text-base px-10 py-5"
+            className="btn-ghost group text-white px-10 py-5"
           >
             <FiMail className="mr-2 group-hover:rotate-12 transition-transform duration-300" size={18} />
             Start a Conversation
@@ -125,7 +125,7 @@ const CTA = () => {
             href="#portfolio"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="btn-ghost text-base px-10 py-5 group"
+            className="btn-ghost text-white px-10 py-5 group"
           >
             View Our Work
             <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
